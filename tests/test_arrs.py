@@ -11,3 +11,10 @@ class TestArrs(unittest.TestCase):
     def test_slice(self):
         self.assertEqual(arrs.my_slice([1, 2, 3, 4], 1, 3), [2, 3])
         self.assertEqual(arrs.my_slice([1, 2, 3], 1), [2, 3])
+
+    def test_slice_empty_list(self):
+        self.assertEqual(arrs.my_slice([], 1, 3), [])
+
+    def test_slice_negative_end(self):
+        self.assertEqual(arrs.my_slice([1, 2, 3, 4], end=-1), [1, 2, 3])
+
